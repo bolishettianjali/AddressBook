@@ -18,7 +18,7 @@ public class Contact {
     }
 
     public String toString() {
-        return "First Name: " + firstName +"\nLast Name: " + lastName + "\nAddress: "
+        return "\nFirst Name: " + firstName +"\nLast Name: " + lastName + "\nAddress: "
                 + address + "\nCity: " + city + "\nState: " + state + "\nZip: " + zip
                 + "\nPhone Number: " + phoneNumber + "\nEmail: " + email;
     }
