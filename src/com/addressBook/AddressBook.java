@@ -5,13 +5,26 @@ import java.util.Scanner;
 public class AddressBook {
 
     static Scanner scanner = new Scanner(System.in);
+    static Contact[] contacts;
 
     public static void main(String[] args) {
         System.out.println("Welcome to Address Book Program\n");
-        addContact();
+
+        //To take no.of contacts to be added for creating an array for saving contact objects.
+        System.out.println("Enter how many Contacts do you want add: ");
+        int noOfContacts = scanner.nextInt();
+        contacts = new Contact[noOfContacts]; //Created an array with size of no.of contacts to be add.
+
+        //for loop to take details and save Contact objects in Contact array.
+        for (int i = 0; i < contacts.length; i++) {
+            System.out.println("\nEnter person-"+(i+1)+" details: \n");
+            Contact contact = addContact();
+            contacts[i] = contact;
+        }
     }
 
-    public static void addContact() {
+    //Method to take input and create a Contact
+    public static Contact addContact() {
         System.out.println("Enter First Name:");
         String firstName = scanner.next();
         System.out.println("Enter Last Name:");
@@ -33,6 +46,8 @@ public class AddressBook {
                 state, zip, phoneNumber, email);
 
         System.out.println(contact);
+
+        return contact;
     }
 
 }
